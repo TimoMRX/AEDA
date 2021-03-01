@@ -1,6 +1,6 @@
 #include "Ant.hpp"
 
-Ant::Ant(World *world, int option) {
+Ant::Ant(World &world, int option) {
   assert((option == 0) | (option == 1));
   switch (option) {
     case 0: {
@@ -29,7 +29,7 @@ Ant::Ant(World *world, int option) {
 }
 
 
-Ant::Ant(World *world, int x, int y) {
+Ant::Ant(World &world, int x, int y) {
   setPosition(x, y);
   index_ = 0;
 }
