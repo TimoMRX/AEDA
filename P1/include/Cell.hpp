@@ -5,11 +5,11 @@ class Cell {
 
 public:
   Cell();
-  Cell(int color);
+  Cell(const int color, const Position position);
   ~Cell();
 
   void setColor(const int color);
-  // void setPosition(Position position)
+  void setPosition(const int x, const int y);
   int getColor() const;
 
 private:

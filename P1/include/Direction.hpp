@@ -7,7 +7,7 @@ class Direction {
 public:
   Direction();
   ~Direction();
-  Position getDirection(int index);
+  Position getDirection(const int index);
 private:
   std::vector<Position> direction_;
 };

@@ -1,14 +1,11 @@
 #include "World.hpp"
 
-World::World(const int sizeX, const int sizeY) {
-  sizeX_ = sizeX;
-  sizeY_ = sizeY_;
-  Resize(sizeX, sizeY);
+World::World(const int color, const int sizeX, const int sizeY) {
+  Resize(color, sizeX, sizeY);
 }
 
 
 World::~World() {
-
 }
 
 
@@ -37,9 +34,16 @@ World::getCell(Position position) {
 
 
 void
-World::Resize(int sizeX, int sizeY) {
+World::Resize(const int color, const int sizeX, const int sizeY) {
+  sizeX_ = sizeX;
+  sizeY_ = sizeY_;
   world_.resize(sizeX);
   for (int i = 0; i < sizeX; i++) {
-    world_[i].resize(sizeY, 0);
+    world_[i].resize(sizeY);
+		for (int j = 0; j < sizeY; ++j) {
+			world_[i][j].setColor(color);
+			world_[i][j].setPosition(i, j);
+		}
+    
   }
 }

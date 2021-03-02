@@ -5,7 +5,7 @@
 class World {
 
 public:
-  World(const int sizeX = 100, const int sizeY = 100);
+  World(const int color = 0, const int sizeX = 100, const int sizeY = 100);
   ~World();
 
   int getSizeX();
@@ -13,7 +13,7 @@ public:
   Cell getCell(int x, int y);
   Cell getCell(Position position);
 
-  void Resize(int sizeX, int sizeY);
+  void Resize(const int color, const int sizeX,const int sizeY);
 
 private:
   int sizeX_, sizeY_;

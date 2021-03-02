@@ -1,6 +1,6 @@
 #include "Ant.hpp"
 
-Ant::Ant(World &world, int option) {
+Ant::Ant(World *world, int option) {
   assert((option == 0) | (option == 1));
   switch (option) {
     case 0: {
@@ -29,7 +29,9 @@ Ant::Ant(World &world, int option) {
 }
 
 
-Ant::Ant(World &world, int x, int y) {
+Ant::Ant(World *world, int x, int y) {
+  assert((x >= 0) && (y >= 0));
+  assert( (x <= world->getSizeX() -1) && (y <= world->getSizeY() -1));
   setPosition(x, y);
   index_ = 0;
 }
@@ -69,6 +71,11 @@ Ant::getNextPosition() {
   return next_position_;
 }
 
+
+int
+Ant::getIndex() {
+  return index_;
+}
 
 void
 Ant::setIndex(const int index) {

@@ -17,6 +17,7 @@ public:
 
   Position getPosition();
   Position getNextPosition();
+  int getIndex();
 
 private:
   Position position_;

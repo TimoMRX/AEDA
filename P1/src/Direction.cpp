@@ -16,6 +16,6 @@ Direction::~Direction() {
 
 
 Position
-Direction::getDirection(int index) {
+Direction::getDirection(const int index) {
   return direction_[index];
 }
