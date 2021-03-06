@@ -58,7 +58,7 @@ Ant::setPosition(const Position position) {
 void
 Ant::setNextPosition(const int index) {
   Position dummy;
-  next_position_.setPosition(dummy.Sum(position_, direction_.getDirection(unsigned(index) % 4)));
+  next_position_.setPosition(dummy.Sum(position_, direction_.getDirection(unsigned(index) % 8)));
 }
 
 
@@ -92,7 +92,7 @@ Ant::Write(World *world) {
   for (int i = 0; i < world->getSizeX() - 1; i++) {
       for (int j = 0; j < world->getSizeY() - 1; j++) {
         if ((getPosition().getX() == i) && (getPosition().getY() == j)) {
-          switch (unsigned(getIndex()) % 4) {
+          switch (unsigned(getIndex()) % 8) {
             case 0:
               std::cout << "^";
               break;
