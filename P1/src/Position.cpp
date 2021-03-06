@@ -55,10 +55,3 @@ Position::Sum(Position A, Position B) {
   int y = A.getY() + B.getY();
   return Position(x, y);
 }
-
-
-Position&
-Position::operator +(Position B) {
-  this->Sum(getPosition(), B);
-  return *this;
-}

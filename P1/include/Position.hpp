@@ -22,8 +22,6 @@ public:
 
   Position Sum(Position A, Position B);
 
-  Position& operator +(Position B);
-
 private:
   int x_, y_;
 };

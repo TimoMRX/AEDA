@@ -22,8 +22,20 @@ World::getSizeY() {
 
 
 int
-World::getCellColor(int x, int y) {
+World::getCellColor(const int x, const int y) {
   return world_[x][y].getColor();
+}
+
+
+void
+World::setCellColor(const int color, const int x, const int y) {
+  world_[x][y].setColor(color);
+}
+
+
+void
+World::setCellColor(const int color, Position position) {
+  world_[position.getX()][position.getY()].setColor(color);
 }
 
 
