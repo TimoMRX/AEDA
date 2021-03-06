@@ -1,7 +1,6 @@
 #include "Cell.hpp"
 
 Cell::Cell() {
-  setColor(0);
 }
 
 

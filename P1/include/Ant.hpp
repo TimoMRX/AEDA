@@ -19,6 +19,8 @@ public:
   Position getNextPosition();
   int getIndex();
 
+  void Write(World *world);
+
 private:
   Position position_;
   Position next_position_;
