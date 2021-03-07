@@ -8,6 +8,7 @@ class Ant {
 public:
   Ant(World *world, int option = 0);
   Ant(World *world, int x, int y);
+  Ant() {};
   ~Ant();
 
   void setPosition(const int x, const int y);

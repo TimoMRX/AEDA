@@ -1,13 +1,9 @@
 #include <iostream>
-#include "../include/Ant.hpp"
+#include "../include/Universe.hpp"
 
 int main() {
-  // std::cout << "Test" << std::endl;
-  World *world = new World;
-  // std::cout << "Test" << std::endl;
-  Ant ant(world, 1);
-  // std::cout << "Test" << std::endl;
+  Universe universe;
   while (true) {
-    ant.Write(world);
+    universe.Loop();
   }
 }

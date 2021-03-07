@@ -97,13 +97,25 @@ Ant::Write(World *world) {
               std::cout << "^";
               break;
             case 1:
-              std::cout << ">";
+              std::cout << "↗";
               break;
             case 2:
-              std::cout << "v";
+              std::cout << ">";
               break;
             case 3:
+              std::cout << "↘";
+              break;
+            case 4:
+              std::cout << "v";
+              break;
+            case 5:
+              std::cout << "↙";
+              break;
+            case 6:
               std::cout << "<";
+              break;
+            case 7:
+              std::cout << "↖";
               break;
             default:
               std::cout << "Test";
@@ -128,8 +140,9 @@ Ant::Write(World *world) {
       setIndex(getIndex() + 1);
       world->setCellColor(0, getPosition());
     }
-
+    std::cout << world->getSizeX();
+    std::cout << world->getSizeY() << std::endl;
     setNextPosition(getIndex());
     setPosition(getNextPosition());
-    sleep(0.2);
+    sleep(0.9);
   }

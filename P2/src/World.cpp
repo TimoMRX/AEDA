@@ -5,6 +5,13 @@ World::World(const int color, const int sizeX, const int sizeY) {
 }
 
 
+World::World(const World &obj) {
+  sizeX_ = obj.sizeX_;
+  sizeY_ = obj.sizeY_;
+  world_ = obj.world_;
+}
+
+
 World::~World() {
 }
 
@@ -40,8 +47,20 @@ World::setCellColor(const int color, Position position) {
 
 
 Cell
+World::getCell(const int x, const int y) {
+  return world_[x][y];
+}
+
+
+Cell
 World::getCell(Position position) {
   return world_[position.getX()][position.getY()];
+}
+
+
+void
+World::setCell(const int x, const int y, Cell cell) {
+  world_[x][y] = cell;
 }
 
 
@@ -58,3 +77,61 @@ World::Resize(const int color, const int sizeX, const int sizeY) {
 		}
   }
 }
+
+
+void
+World::ResizeU() {
+  std::vector<Cell> dummy;
+  dummy.resize(sizeY_);
+  for (int i = 0; i < sizeY_ - 1; i++) {
+    dummy[i].setColor(0);
+  }
+
+  for (int i = 0; i < 5; i++) {
+    world_.insert(world_.begin(), dummy);
+    sizeX_++;
+  }
+}
+
+
+void
+World::ResizeL() {
+  Cell dummy;
+  dummy.setColor(0);
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < sizeX_; j++) {
+      world_[j].insert(world_[j].begin(), dummy);
+    }
+      sizeY_++;
+  }
+}
+
+
+void
+World::ResizeR() {
+  Cell dummy;
+  dummy.setColor(0);
+  
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < sizeX_; j++) {
+      world_[j].push_back(dummy);
+    }
+      sizeY_ ++;
+  }
+}
+
+
+void
+World::ResizeD() {
+  std::vector<Cell> dummy;
+  dummy.resize(sizeY_);
+  for (int i = 0; i < sizeY_ - 1; i++) {
+    dummy[i].setColor(0);
+  }
+  
+  for (int i = 0; i < 5; i++) {
+      world_.push_back(dummy);
+      sizeX_ ++;
+    }
+}
+
