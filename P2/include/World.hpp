@@ -19,10 +19,8 @@ public:
   void setCellColor(const int color, Position position);
 
   void Resize(const int color, const int sizeX,const int sizeY);
-  void ResizeU();
-  void ResizeL();
-  void ResizeR();
-  void ResizeD();
+  void ResizeUD(const int sel);
+  void ResizeLR(const int sel);
 
 private:
   int sizeX_, sizeY_;

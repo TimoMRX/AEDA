@@ -80,7 +80,7 @@ World::Resize(const int color, const int sizeX, const int sizeY) {
 
 
 void
-World::ResizeU() {
+World::ResizeUD(const int sel) {
   std::vector<Cell> dummy;
   dummy.resize(sizeY_);
   for (int i = 0; i < sizeY_ - 1; i++) {
@@ -88,50 +88,27 @@ World::ResizeU() {
   }
 
   for (int i = 0; i < 5; i++) {
-    world_.insert(world_.begin(), dummy);
-    sizeX_++;
+    if (sel == 0)
+      world_.insert(world_.begin(), dummy);
+    else
+      world_.push_back(dummy);
+    sizeX_ ++;
   }
 }
 
 
 void
-World::ResizeL() {
+World::ResizeLR(const int sel) {
   Cell dummy;
   dummy.setColor(0);
+
   for (int i = 0; i < 5; i++) {
     for (int j = 0; j < sizeX_; j++) {
-      world_[j].insert(world_[j].begin(), dummy);
+      if (sel == 0)
+        world_[j].insert(world_[j].begin(), dummy);
+      else
+        world_[j].push_back(dummy);
     }
       sizeY_++;
   }
 }
-
-
-void
-World::ResizeR() {
-  Cell dummy;
-  dummy.setColor(0);
-  
-  for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < sizeX_; j++) {
-      world_[j].push_back(dummy);
-    }
-      sizeY_ ++;
-  }
-}
-
-
-void
-World::ResizeD() {
-  std::vector<Cell> dummy;
-  dummy.resize(sizeY_);
-  for (int i = 0; i < sizeY_ - 1; i++) {
-    dummy[i].setColor(0);
-  }
-  
-  for (int i = 0; i < 5; i++) {
-      world_.push_back(dummy);
-      sizeX_ ++;
-    }
-}
-
