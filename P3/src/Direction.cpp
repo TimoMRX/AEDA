@@ -3,14 +3,14 @@
 Direction::Direction() {
   direction_.resize(8);
   
-  direction_[0].setPosition(-1, 0);
-  direction_[1].setPosition(-1, 1);
-  direction_[2].setPosition(0, 1);
-  direction_[3].setPosition(1, 1);
-  direction_[4].setPosition(1, 0);
-  direction_[5].setPosition(1, -1);
-  direction_[6].setPosition(0, -1);
-  direction_[7].setPosition(-1, -1);
+  direction_[UP].setPosition(-1, 0);
+  direction_[UPRIGHT].setPosition(-1, 1);
+  direction_[RIGHT].setPosition(0, 1);
+  direction_[DOWNRIGHT].setPosition(1, 1);
+  direction_[DOWN].setPosition(1, 0);
+  direction_[DOWNLEFT].setPosition(1, -1);
+  direction_[LEFT].setPosition(0, -1);
+  direction_[UPLEFT].setPosition(-1, -1);
 }
 
 

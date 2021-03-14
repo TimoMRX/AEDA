@@ -1,6 +1,6 @@
 #include "World.hpp"
 
-World::World(const int color, const int sizeX, const int sizeY) {
+World::World(const int sizeX, const int sizeY, const int color) {
   Resize(color, sizeX, sizeY);
 }
 
@@ -46,6 +46,10 @@ World::setCellColor(const int color, Position position) {
 }
 
 
+std::vector<std::vector<Cell>> 
+World::getWorld() {
+  return world_;
+}
 Cell
 World::getCell(const int x, const int y) {
   return world_[x][y];
@@ -75,40 +79,5 @@ World::Resize(const int color, const int sizeX, const int sizeY) {
 			world_[i][j].setColor(color);
 			world_[i][j].setPosition(i, j);
 		}
-  }
-}
-
-
-void
-World::ResizeUD(const int sel) {
-  std::vector<Cell> dummy;
-  dummy.resize(sizeY_);
-  for (int i = 0; i < sizeY_ - 1; i++) {
-    dummy[i].setColor(0);
-  }
-
-  for (int i = 0; i < 5; i++) {
-    if (sel == 0)
-      world_.insert(world_.begin(), dummy);
-    else
-      world_.push_back(dummy);
-    sizeX_ ++;
-  }
-}
-
-
-void
-World::ResizeLR(const int sel) {
-  Cell dummy;
-  dummy.setColor(0);
-
-  for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < sizeX_; j++) {
-      if (sel == 0)
-        world_[j].insert(world_[j].begin(), dummy);
-      else
-        world_[j].push_back(dummy);
-    }
-      sizeY_++;
   }
 }

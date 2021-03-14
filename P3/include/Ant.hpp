@@ -1,13 +1,15 @@
 #pragma once
 #include "Direction.hpp"
-#include "World.hpp"
+#include "FWorld.hpp"
+#include "IWorld.hpp"
 #include <random>
 
 class Ant {
 
 public:
-  Ant(World *world, int option = 0);
+  Ant(World *world);
   Ant(World *world, int x, int y);
+  Ant(World *world, Position position);
   Ant() {};
   ~Ant();
 
@@ -20,11 +22,13 @@ public:
   Position getNextPosition();
   int getIndex();
 
-  void Write(World *world);
+  bool Write(World *world, const int i, const int j);
 
 private:
   Position position_;
   Position next_position_;
   Direction direction_;
   int index_;
+
+  void Refresh(World *world);
 };
