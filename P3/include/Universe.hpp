@@ -5,12 +5,14 @@
 class Universe {
 
 public:
-  Universe(World *world, std::vector<Ant> ants, std::vector<Position> positions, const int sizeX, const int sizeY, bool sel = 1);
-  ~Universe();
+  Universe() {}
+  Universe(std::vector<Ant> ants, const int sizeX, const int sizeY, bool sel = 1);
+  ~Universe() {}
 
   World* getWorld();
 
   void Loop();
+  void Write(const int antsel);
 private:
   World *world_;
   std::vector<Ant> ants_;

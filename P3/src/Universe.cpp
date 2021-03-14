@@ -1,6 +1,7 @@
 #include "Universe.hpp"
 
-Universe::Universe(World *world, std::vector<Ant> ants, std::vector<Position> positions, const int sizeX, const int sizeY, bool sel) {
+
+Universe::Universe(std::vector<Ant> ants, const int sizeX, const int sizeY, bool sel) {
   worldsel_ = sel;
   if (worldsel_ == false) {
     world_ = new FWorld(sizeX, sizeY);
@@ -13,12 +14,10 @@ Universe::Universe(World *world, std::vector<Ant> ants, std::vector<Position> po
 
   for (int i = 0; i < ants.size(); i++) {
     ants_[i] = ants[i];
-    ants_[i] = Ant(world_, positions[i]);
   }
 }
 
 
-Universe::~Universe() {}
 
 
 World*
