@@ -23,7 +23,7 @@ public:
   int getIndex();
 
   bool Write(World *world, const int i, const int j);
-
+  void Move(World *world);
 private:
   Position position_;
   Position next_position_;

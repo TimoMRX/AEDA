@@ -12,10 +12,6 @@ World::World(const World &obj) {
 }
 
 
-World::~World() {
-}
-
-
 int
 World::getSizeX() {
   return sizeX_;

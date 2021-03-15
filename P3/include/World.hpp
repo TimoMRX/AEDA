@@ -7,7 +7,7 @@ class World {
 public:
   World(const int sizeX = 5, const int sizeY = 5, const int color = 0);
   World(const World &obj);
-  ~World();
+  ~World() {}
 
   int getSizeX();
   int getSizeY();

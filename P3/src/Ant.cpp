@@ -105,16 +105,24 @@ Ant::Write(World *world, const int i, const int j) {
         std::cout << "Test";
         break;
     }
+    // Refresh(world);
     return true;
   }
   else if (world->getCellColor(i, j) == 0) {
     std::cout << " ";
-    return false;
+
   }
   else if (world->getCellColor(i, j) == 1) {
     std::cout << "X";
-    return false;
+
   }
+  return false;
+}
+
+
+void
+Ant::Move(World *world) {
+  Refresh(world);
 }
 
 
@@ -128,9 +136,7 @@ Ant::Refresh(World *world) {
       setIndex(getIndex() + 1);
       world->setCellColor(0, getPosition());
     }
-    std::cout << world->getSizeX();
-    std::cout << world->getSizeY() << std::endl;
     setNextPosition(getIndex());
     setPosition(getNextPosition());
-    sleep(0.9);
+    sleep(1);
 }

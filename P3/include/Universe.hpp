@@ -12,7 +12,7 @@ public:
   World* getWorld();
 
   void Loop();
-  void Write(const int antsel);
+  int Write(int antsel);
 private:
   World *world_;
   std::vector<Ant> ants_;
