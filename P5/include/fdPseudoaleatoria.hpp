@@ -6,7 +6,7 @@ class fdPseudoaleatoria: public FuncionDispersion<Clave> {
   public:
     fdPseudoaleatoria(const unsigned n): nDatos(n){}
     unsigned operator()(const Clave& k) const {
-      srand(k);
+      srand(k.entero);
       return rand() % nDatos;
     }
   private:

@@ -7,8 +7,17 @@
 #include "Lista.hpp"
 
 
+struct modificacion {
+  int entero;
+  std::string cadena;
+  bool operator==(const modificacion& valor) const {
+    return ((valor.entero == this->entero) && (valor.cadena == this->cadena));
+  }
+};
+
+using Clave = modificacion;
+
 int main() {
-  using Clave = int;
 
   unsigned tamaño;
   bool eleccion = 0;
@@ -45,7 +54,9 @@ int main() {
     switch (opcion) {
     case 'a':
       std::cout << "Introduzca el número a insertar: ";
-      std::cin >> numero;
+      std::cin >> numero.entero;
+      std::cout << "Introduzca la cadena a insertar: ";
+      std::cin >> numero.cadena;
       if (tabla->Insertar(numero) == true)
         std::cout << "Se ha introducido correctamente" << std::endl;
       else
@@ -54,7 +65,9 @@ int main() {
 
     case 'b':
       std::cout << "Introduzca el número a buscar: ";
-      std::cin >> numero;
+      std::cin >> numero.entero;
+      std::cout << "Introduzca la cadena correspondiente: ";
+      std::cin >> numero.cadena;
       if (tabla->Buscar(numero) == true)
         std::cout << "Valor encontrado" << std::endl;
       else
