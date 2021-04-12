@@ -45,7 +45,7 @@ TablaHash<Clave>::Buscar(const Clave& X, unsigned i) const {
   bool valor = true;
   if (!vDatos_.at(fd_->operator()(X)).Buscar(X)) {
     do {
-      valor = vDatos_.at(fd_->operator()(X) + fe_->operator()(X, j) % nDatos_).Buscar(X);
+      valor = vDatos_.at((fd_->operator()(X) + fe_->operator()(X, j)) % nDatos_).Buscar(X);
       j++;
     } while ((j < i) && (valor == false));
   }
@@ -61,7 +61,7 @@ TablaHash<Clave>::Insertar(const Clave& X, unsigned i) {
   if (!Buscar(X, i)) {
     if (!vDatos_.at(fd_->operator()(X)).Insertar(X)) {
       do {
-        valor = vDatos_.at(fd_->operator()(X) + fe_->operator()(X, j) % nDatos_).Insertar(X);
+        valor = vDatos_.at((fd_->operator()(X) + fe_->operator()(X, j)) % nDatos_).Insertar(X);
         j++;
       } while ((j < i) && (valor == false));
     }
