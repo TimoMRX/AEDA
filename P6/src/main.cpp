@@ -51,6 +51,7 @@ int main() {
   std::cout << "1. Funcion Cuadratica" << std::endl;
   std::cout << "2. Funcion Doble Dispersion" << std::endl;
   std::cout << "3. Funcion Redispersion" << std::endl;
+  
   do {
     std::cin >> eleccione;
     switch (eleccione) {
