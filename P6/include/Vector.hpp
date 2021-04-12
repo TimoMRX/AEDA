@@ -4,7 +4,7 @@
 template<class Clave>
 class Vector {
   public:
-    Vector(unsigned x) {
+    Vector(unsigned x = 0) {
       nSinonimos_ = x; 
       vDatos_.resize(nSinonimos_);
     }

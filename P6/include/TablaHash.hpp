@@ -13,6 +13,8 @@ class TablaHash {
     bool Buscar(const Clave& X, unsigned i) const;
     bool Insertar(const Clave& X, unsigned i);
 
+    // operator=(Vector<Clave> dummy);
+
   private:
     unsigned nDatos_;
     unsigned nSinonimos_;
@@ -29,9 +31,9 @@ TablaHash<Clave>::TablaHash(unsigned datos, unsigned sinonimos, FuncionDispersio
   fd_ = obj;
   fe_ = objex;
   Vector<Clave> dummy(nSinonimos_);
-  vDatos_.resize(nDatos_);
-  for (unsigned i = 0; i < vDatos_.size(); i++)
-    vDatos_[i] = dummy;
+  // vDatos_.resize(nDatos_);
+  // for (unsigned i = 0; i < vDatos_.size(); i++)
+  vDatos_.assign(nDatos_, dummy);
 }
 
 
