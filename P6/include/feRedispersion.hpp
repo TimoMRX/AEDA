@@ -1,6 +1,7 @@
 #pragma once
 
 #include "FuncionDispersion.hpp"
+#include "FuncionExploracion.hpp"
 
 template<class Clave>
 class feRedispersion: public FuncionExploracion<Clave> {

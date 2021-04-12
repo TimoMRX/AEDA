@@ -1,5 +1,5 @@
 #pragma once
-
+#include "FuncionDispersion.hpp"
 template<class Clave>
 class fdModulo: public FuncionDispersion<Clave> {
   public:

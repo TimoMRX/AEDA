@@ -1,9 +1,11 @@
 #pragma once
 
+#include "FuncionExploracion.hpp"
+
 template<class Clave>
 class feLineal: public FuncionExploracion<Clave> {
   public:
-    feLineal() {}
+    // feLineal() {}
     unsigned operator()(const Clave& k, unsigned i) const {
       return i;
     }

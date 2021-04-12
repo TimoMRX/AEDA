@@ -4,7 +4,10 @@
 template<class Clave>
 class Vector {
   public:
-    Vector(unsigned x) {nSinonimos_ = x; vDatos_.resize(nSinonimos_);}
+    Vector(unsigned x) {
+      nSinonimos_ = x; 
+      vDatos_.resize(nSinonimos_);
+    }
     ~Vector() {}
 
     bool Buscar(const Clave& X) const;
@@ -32,7 +35,7 @@ Vector<Clave>::Buscar(const Clave& X) const {
 template<class Clave>
 bool
 Vector<Clave>::Insertar(const Clave& X) {
-  if (Buscar(X)) {
+  if ((Buscar(X)) || estaLleno()) {
     return false;
   }
   vDatos_.push_back(X);

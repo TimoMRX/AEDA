@@ -1,6 +1,7 @@
 #pragma once
 
 #include "FuncionDispersion.hpp"
+#include "FuncionExploracion.hpp"
 
 template<class Clave>
 class feDoble: public FuncionExploracion<Clave> {
@@ -12,5 +13,5 @@ class feDoble: public FuncionExploracion<Clave> {
       return fd_->operator()(k) * i;
     }
   private:
-    FuncionDispersion<Clave> *fd_
+    FuncionDispersion<Clave> *fd_;
 };

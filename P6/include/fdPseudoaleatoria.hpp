@@ -1,5 +1,6 @@
 #pragma once
 #include <stdlib.h>
+#include "FuncionDispersion.hpp"
 
 template<class Clave>
 class fdPseudoaleatoria: public FuncionDispersion<Clave> {
